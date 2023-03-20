@@ -1,16 +1,15 @@
 import React from 'react';
 import './App.css';
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
+import { Root } from './modules/root';
 
 function App() {
-  const store: any[] = useSelector((state: any) => state.productsReducer.products);
-  const navigate = useNavigate();
-
-  if (store.length > 0) {
-    navigate('/products');
-  }
-
-  return <h1>123</h1>;
+  return (
+    <Routes>
+      <Route path="kitglobal-test-task" element={<Root />}>
+        <Route index element={<div>Main</div>} />
+      </Route>
+    </Routes>
+  );
 }
 export default App;
