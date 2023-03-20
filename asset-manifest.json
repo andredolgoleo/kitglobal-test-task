@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kitglobal-task/static/css/main.073c9b0a.css",
+    "main.js": "/kitglobal-task/static/js/main.0fe46af4.js",
+    "index.html": "/kitglobal-task/index.html",
+    "main.073c9b0a.css.map": "/kitglobal-task/static/css/main.073c9b0a.css.map",
+    "main.0fe46af4.js.map": "/kitglobal-task/static/js/main.0fe46af4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.0fe46af4.js"
+  ]
+}
