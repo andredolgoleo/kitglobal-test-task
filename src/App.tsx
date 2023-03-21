@@ -1,13 +1,17 @@
 import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { Root } from './modules/root';
+import { Root } from './pages/modules/root';
+import { ProductsTable } from './pages/ProductsTable';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const products = useSelector((state: any) => state.productsReducer.products);
+
   return (
     <Routes>
       <Route path="kitglobal-test-task" element={<Root />}>
-        <Route index element={<div>Main</div>} />
+        {products.length > 0 && <Route index element={<ProductsTable data={products} />} />}
       </Route>
     </Routes>
   );

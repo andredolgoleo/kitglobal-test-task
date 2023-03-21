@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Outlet } from 'react-router-dom';
-import { asyncFetchRequest } from '../../services/store/productsReducer';
+import { asyncFetchRequest } from '../../../services/store/productsReducer';
 import { Header } from '../Header';
 
 export const Root: React.FC = () => {
   const dispatch = useDispatch();
-
-  console.log('mounted');
 
   useEffect(() => {
     dispatch(asyncFetchRequest());
@@ -16,7 +14,7 @@ export const Root: React.FC = () => {
   return (
     <>
       <Header />
-      <main>
+      <main style={{ padding: '50px' }}>
         <Outlet />
       </main>
       <footer>FOOTER</footer>
