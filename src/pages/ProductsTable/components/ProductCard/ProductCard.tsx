@@ -16,7 +16,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const dispatch = useDispatch();
   const isValid = Object.values(product).some((item: number | string) => item !== null);
 
-  console.log(isValid);
   const store = useSelector((state: any) => state.shoppingCartReducer);
   const isChosen =
     store.length > 0 ? store.some((item: ProductTypes) => item.id === product.id) : false;

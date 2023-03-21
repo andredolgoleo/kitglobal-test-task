@@ -16,5 +16,5 @@ export const productsReducer = (state = defaultState, action: ActionTypes) => {
   return state;
 };
 
-export const setRecipes = (payload: unknown) => ({ type: SET_PRODUCTS, payload });
-export const asyncFetchRequest = () => ({ type: ASYNC_FETCH_REQUEST });
+export const setRecipes = (payload: unknown) => ({ type: SET_PRODUCTS, payload }); // setting products
+export const asyncFetchRequest = () => ({ type: ASYNC_FETCH_REQUEST }); // request to API for products

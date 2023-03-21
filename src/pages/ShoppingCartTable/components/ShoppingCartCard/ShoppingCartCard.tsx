@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeProductFromCart } from '../../../../../services/store/shoppingCartReducer';
-import { ProductTypes } from '../../../../../services/types/ProductsTableTypes';
-import { Container, Button } from '../../../styled-components';
+import { removeProductFromCart } from '../../../../services/store/shoppingCartReducer';
+import { ProductTypes } from '../../../../services/types/ProductsTableTypes';
+import { Button, Container } from '../../../modules/styled-components';
 
 interface Props {
   product: ProductTypes;

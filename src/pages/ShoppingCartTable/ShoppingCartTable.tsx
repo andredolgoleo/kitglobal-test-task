@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { ProductTypes } from '../../../services/types/ProductsTableTypes';
-import { Container, Title } from '../styled-components';
+import { ProductTypes } from '../../services/types/ProductsTableTypes';
+import { Container, Title } from '../modules/styled-components';
 import { ShoppingCartCard } from './components/ShoppingCartCard/ShoppingCartCard';
 export const ShoppingCartTable: React.FC = () => {
   const store = useSelector((store: any) => store.shoppingCartReducer);

@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Root } from './pages/modules/root';
 import { ProductsTable } from './pages/ProductsTable';
 import { useSelector } from 'react-redux';
-import { ShoppingCartTable } from './pages/modules/ShoppingCartTable/ShoppingCartTable';
+import { ShoppingCartTable } from './pages/ShoppingCartTable/ShoppingCartTable';
 
 function App() {
   const products = useSelector((state: any) => state.productsReducer.products);
