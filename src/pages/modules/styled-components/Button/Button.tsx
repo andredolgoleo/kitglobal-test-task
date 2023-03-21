@@ -9,6 +9,10 @@ export const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
 
+  &::disabled {
+    background: #grey;
+  }
+
   &:hover {
     background-color: #3e8e41;
   }

@@ -2,6 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ProductTypes } from '../../../../services/types/ProductsTableTypes';
 import { Container, Button } from '../../../modules/styled-components';
+import {
+  removeProductFromCart,
+  addProductToCart
+} from '../../../../services/store/shoppingCartReducer';
 
 interface ProductCardProps {
   // eslint-disable-next-line prettier/prettier
@@ -10,16 +14,19 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const dispatch = useDispatch();
-  const store = useSelector((state: any) => state.shoppingCartReducer);
+  const isValid = Object.values(product).some((item: number | string) => item !== null);
 
-  console.log(store);
+  console.log(isValid);
+  const store = useSelector((state: any) => state.shoppingCartReducer);
+  const isChosen =
+    store.length > 0 ? store.some((item: ProductTypes) => item.id === product.id) : false;
 
   const handleOnClick = () => {
-    dispatch({
-      action: 'ADD_PRODUCT_TO_CART',
-      payload: product,
-      type: 'ADD_PRODUCT_TO_CART'
-    });
+    dispatch(addProductToCart(product));
+  };
+
+  const handleOnRemove = () => {
+    dispatch(removeProductFromCart(product.id));
   };
 
   return (
@@ -38,7 +45,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {product.title}
       </span>
       <img height={250} width={250} src={product.url} alt="" />
-      <Button onClick={handleOnClick}>Buy</Button>
+      {isChosen ? (
+        <Button onClick={handleOnRemove}>Remove from shopping cart</Button>
+      ) : (
+        <Button disabled={!isValid} onClick={handleOnClick}>
+          Buy
+        </Button>
+      )}
     </Container>
   );
 };
