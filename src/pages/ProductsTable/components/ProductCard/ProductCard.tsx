@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ProductTypes } from '../../../../services/types/ProductsTableTypes';
-import { Container } from '../../../modules/styled-components';
+import { Container, Button } from '../../../modules/styled-components';
 
 interface ProductCardProps {
   // eslint-disable-next-line prettier/prettier
@@ -38,7 +38,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {product.title}
       </span>
       <img height={250} width={250} src={product.url} alt="" />
-      <button onClick={handleOnClick}>Buy</button>
+      <Button onClick={handleOnClick}>Buy</Button>
     </Container>
   );
 };
