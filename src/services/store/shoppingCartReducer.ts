@@ -1,7 +1,8 @@
 import { ActionTypes } from '../types'; // eslint-disable-line
 import { ProductTypes } from '../types/ProductsTableTypes';
 
-const defaultState: any[] = JSON.parse(localStorage.getItem('savedProducts') || '[]') || [];
+const defaultState: ProductTypes[] | [] =
+  JSON.parse(localStorage.getItem('savedProducts') || '[]') || [];
 
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 export const DELETE_PRODUCT_FROM_CART = 'DELETE_PRODUCT_FROM_CART';
@@ -22,7 +23,7 @@ export const shoppingCartReducer = (state = defaultState, action: ActionTypes) =
   return state;
 };
 
-export const addProductToCart = (payload: any) => ({ type: ADD_PRODUCT_TO_CART, payload });
+export const addProductToCart = (payload: ProductTypes) => ({ type: ADD_PRODUCT_TO_CART, payload });
 export const removeProductFromCart = (payload: number) => ({
   type: DELETE_PRODUCT_FROM_CART,
   payload
